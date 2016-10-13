@@ -1,0 +1,37 @@
+{% extends 'LittleredCommonEmailBundle::base.html.twig' %}
+
+{% block message_body_main_heading %}Heading{% endblock %} {# This block should contain text only #}
+
+{# Message body - This block should contain paragraphs #}
+{% block message_body_main_text %}
+{% endblock %}
+
+{# Message detail #}
+{# This block should contain paragraphs or, if a more complex layout is required, a table #}
+{% block message_body_detail_content %} 
+{% endblock %}
+
+{# Alternatively, this block should be included in order to overwrite the whole message detail block #}
+{#
+	{% block message_body_detail %}{% endblock %}
+#}
+
+{# Footer actions #}
+{# This block should contain a tags within li tags #}
+{% block footer_actions_content %}
+{% endblock %}
+
+{# Alternatively, This block should be included in order to overwrite the whole actions block #}
+{#
+	{% block footer_actions %}{% endblock %}
+#}
+
+{# Small print #}
+{# This block should be included in order to overwrite the whole smallprint block  #}
+{% block footer_smallprint %}{% endblock %}
+
+{# Alternatively, this block should contain paragraphs #}
+{#
+    {% block footer_smallprint_content %}
+    {% endblock %}
+#}

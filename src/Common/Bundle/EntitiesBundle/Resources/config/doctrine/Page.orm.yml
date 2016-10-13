@@ -1,0 +1,44 @@
+Common\Bundle\EntitiesBundle\Entity\Page:
+    type: entity
+    table: pages
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: 255
+        description:
+            type: text
+        slug:
+            type: string
+            length: 255
+        created:
+            type: datetime
+    manyToOne:
+        setting:
+            targetEntity: Setting 
+            inversedBy: pages
+            joinColumn:
+                name: setting_id
+                referencedColumnName: id
+        author:
+            targetEntity: User
+            joinColumn: 
+                name: author_id
+                referencedColumnName: id
+    inheritanceType: JOINED
+    discriminatorColumn:
+        name: page_type
+        type: string
+        length: 255
+    discriminatorMap:
+        species: Species
+        character: Character
+    options:
+        charset: utf8
+        type: InnoDB    
+    lifecycleCallbacks: {  }

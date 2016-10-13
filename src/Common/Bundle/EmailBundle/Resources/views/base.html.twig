@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>*|MC:SUBJECT|*</title>
+    </head>
+{% inlinecss 'LittleredCommonEmailBundle:css:emails.css.twig' %}
+
+<body>
+    <center>
+        <table id="container">
+            <tr>
+                <td align="center" valign="top">
+                    {# Header #}
+                    <table class="headerContainer">
+                        <tr>
+                            <td class="headerContent">
+                                <img src="{{ amazonS3 ~ settings.siteLogo }}"/>
+                            </td>
+                        </tr>
+                    </table>
+                    {# Body content #}
+                    <table class="bodyContainer">
+                        <tr>
+                            <td>
+                                {% block message_body %}
+                                    {% block message_body_main %}
+                                        <table class="section mainContent serif">
+                                            <tr>
+                                                <td class="serif">
+                                                    {% block message_body_main_content %}
+                                                        <h2>
+                                                            {%- block message_body_main_heading %}Heading{% endblock -%}
+                                                        </h2>
+                                                        {% block message_body_main_text %}
+                                                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+                                                            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+                                                            <p>Nulla <strong>consequat massa quis enim</strong>. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis</p>
+                                                        {% endblock %}
+                                                    {% endblock %}
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    {% endblock %}
+                                    {% block message_body_detail %}
+                                        <table class="section detailContent bgSolid">
+                                            <tr>
+                                                <td class="inner">
+                                                    {% block message_body_detail_content %}
+                                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+                                                        <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+                                                        <p>Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis</p>
+                                                    {% endblock %}
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    {% endblock %}
+                                {% endblock %}
+                            </td>
+                        </tr>
+                    </table>
+                    {# Footer content #}
+                    {% block footer %}
+                        <table class="footerContainer">
+                            {% block footer_actions %}
+                                <tr>
+                                    <td>
+                                        <table class="footerActions bgSolid">
+                                            <tr>
+                                                <td>
+                                                    <ul>
+                                                        {% block footer_actions_content %}
+                                                            <li><a href="{{ path('littlered_shop_pages_index') }}">First action</a></li>
+                                                            <li><a href="{{ path('littlered_shop_pages_index') }}">Second action</a></li>
+                                                        {% endblock %}
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            {% endblock %}
+                            {% block footer_main %}
+                                <tr>
+                                    <td>
+                                        <table class="footerMain bgSolid">
+                                            {% block footer_main_content %}
+                                                <tr>
+                                                    <td>
+                                                        <h3 class="serif">Find us on social media</h3>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="socialIcons">
+                                                        <ul>
+                                                            <li>
+                                                                <a href="{{ settings.facebookUrl }}">
+                                                                    <img src="{{ amazonS3 ~ 'global/assets/facebook_logo.jpg' }}">
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="{{ settings.twitterUrl }}">
+                                                                    <img src="{{ amazonS3 ~ 'global/assets/twitter_logo.jpg' }}">
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="{{ settings.instagramUrl }}">
+                                                                    <img src="{{ amazonS3 ~ 'global/assets/instagram_logo.jpg' }}">
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="{{ settings.pinterestUrl }}">
+                                                                    <img src="{{ amazonS3 ~ 'global/assets/pinterest_logo.jpg' }}">
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                {% block footer_unsubscribe %}
+                                                {% endblock %}
+                                                <tr>
+                                                    <td class="inner">
+                                                        <table>
+                                                            <tr class="equal3cols">
+                                                                <td>
+                                                                    <h3 class="serif">Email us</h3>
+                                                                    <p>
+                                                                        <a target="_blank" href="mailto:{{ settings.companyContactEmail }}">{{ settings.companyContactEmail }}</a></p>
+                                                                </td>
+                                                                <td>
+                                                                    <h3 class="serif">Write to us</h3>
+                                                                    <p>{{ settings.companyContactAddress|raw }}</p>
+                                                                </td>
+                                                                <td>
+                                                                    <h3 class="serif">Call us</h3>
+                                                                    <p>{{ settings.companyContactPhone }}</p>
+                                                                    <p>
+                                                                        We're available<br/>
+                                                                        Monday - Friday<br/>
+                                                                        9am - 5:30pm<br/>
+                                                                        Saturday<br/>
+                                                                        10am - 1pm<br/>
+                                                                    </p>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="copyright" colspan="3">&copy; {{ settings.companyRegisteredName }}. All rights reserved.</td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            {% endblock %}
+                                        </table>
+                                    </td>
+                                </tr>
+                            {% endblock %}
+                            {% block footer_smallprint %}
+                                <tr>
+                                    <td>
+                                        <table class="smallprint">
+                                            <tr class="">
+                                                <td colspan="2">
+                                                    {% block footer_smallprint_content %}
+                                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                                                        <p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
+                                                        <p>In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</p>
+                                                        <p>Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.</p>
+                                                        <p>Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.</p>
+                                                        <p>Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,</p>
+                                                    {% endblock %}
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            {% endblock %}
+                        </table>
+                    {% endblock %}
+                </td>
+            </tr>
+        </table>
+    </center>
+</body>
+
+{% endinlinecss %}
+</html>

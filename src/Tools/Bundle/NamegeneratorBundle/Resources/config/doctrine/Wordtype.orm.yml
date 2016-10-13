@@ -1,0 +1,16 @@
+Tools\Bundle\NamegeneratorBundle\Entity\Wordtype:
+    type: entity
+    table: wordtypes
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        description:
+            type: text
+    lifecycleCallbacks: {  }

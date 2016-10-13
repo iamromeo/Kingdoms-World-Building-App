@@ -1,0 +1,7 @@
+common_email_sandbox:
+    path:     email/sandbox/{templateName}
+    defaults: { _controller: CommonEmailBundle:Email:sandbox, templateName: customerOrderConfirmation }
+
+common_email_testsend:
+    path:     email/test
+    defaults: { _controller: CommonEmailBundle:Email:test }

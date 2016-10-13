@@ -1,0 +1,24 @@
+Common\Bundle\EntitiesBundle\Entity\Note:
+    type: entity
+    table: notes
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: 255
+        text:
+            type: text
+        created:
+            type: datetime
+    manyToOne:
+        author:
+            targetEntity: User
+            joinColumn: 
+                name: author_id
+                referencedColumnName: id
+    lifecycleCallbacks: {  }

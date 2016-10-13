@@ -1,0 +1,7 @@
+# Learn more about services, parameters and containers at
+# 
+parameters:
+#    parameter_name: value
+
+imports:
+    - { resource: "@CommonEmailBundle/Resources/config/services.yml" }

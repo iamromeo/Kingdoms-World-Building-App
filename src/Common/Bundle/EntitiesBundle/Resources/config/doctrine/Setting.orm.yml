@@ -1,0 +1,29 @@
+Common\Bundle\EntitiesBundle\Entity\Setting:
+    type: entity
+    table: settings
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: 255
+        description:
+            type: text
+        created:
+            type: datetime
+    oneToMany:
+        pages:
+            targetEntity: Page
+            mappedBy: setting 
+    manyToOne:
+        creator:
+            targetEntity: User
+            inversedBy: settings
+            joinColumn: 
+                name: creator_id
+                referencedColumnName: id
+    lifecycleCallbacks: {  }

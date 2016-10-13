@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="col-lg-12">
+	<div class="page-header">
+	  <h1>Map test</h1>
+	</div>
+	<div class="row">
+		<div class="col-lg-12">
+		<div id="map" style="width: 100%; height: 500px;"></div>
+		</div>
+	</div>
+</div>
+{% endblock body %}
+
+{% block javascripts %}
+  <script>
+
+  var mapId = 'grey';
+  var mapMinZoom = 0;
+  var mapMaxZoom = 2;
+  var tileSize = 256;
+
+  var mapWidth = 1600;
+  var mapHeight = 1131;
+
+
+  var tiles = L.tileLayer('/files/maps/' + mapId +'/{z}/{x}/{y}.jpg', {
+    minZoom: mapMinZoom,
+    maxZoom: mapMaxZoom,
+    tileSize : tileSize,
+    tms: true,
+    attribution: false,
+    continuousWorld: true,
+  });
+
+
+  var map = L.map('map', {
+    center: [0, 0],
+    zoom: mapMaxZoom,
+    minZoom: mapMinZoom,
+    maxZoom: mapMaxZoom,
+    noWrap: true,
+    layers:[tiles],
+    crs: L.CRS.Simple, 
+  });
+
+
+  var southWest = map.unproject( [0, -mapHeight], map.getMaxZoom() );
+  var northEast = map.unproject( [mapWidth, 0], map.getMaxZoom());
+  map.setMaxBounds(new L.LatLngBounds(southWest, northEast));
+
+
+  var marker = L.marker(map.unproject([50, -50],  map.getMaxZoom() ) ).addTo(map);
+  var marker = L.marker(map.unproject([200, -200],  map.getMaxZoom() ) ).addTo(map);
+
+</script>
+{% endblock javascripts %}

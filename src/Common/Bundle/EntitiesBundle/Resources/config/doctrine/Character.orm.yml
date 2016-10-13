@@ -1,0 +1,8 @@
+Common\Bundle\EntitiesBundle\Entity\Character:
+    type: entity
+    table: characters
+    fields:
+        name:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

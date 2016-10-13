@@ -1,0 +1,30 @@
+word:
+    path:     /
+    defaults: { _controller: "ToolsNamegeneratorBundle:Word:index" }
+
+word_show:
+    path:     /{id}/show
+    defaults: { _controller: "ToolsNamegeneratorBundle:Word:show" }
+
+word_new:
+    path:     /new
+    defaults: { _controller: "ToolsNamegeneratorBundle:Word:new" }
+
+word_create:
+    path:     /create
+    defaults: { _controller: "ToolsNamegeneratorBundle:Word:create" }
+    methods:  POST
+
+word_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ToolsNamegeneratorBundle:Word:edit" }
+
+word_update:
+    path:     /{id}/update
+    defaults: { _controller: "ToolsNamegeneratorBundle:Word:update" }
+    methods:  [POST, PUT]
+
+word_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ToolsNamegeneratorBundle:Word:delete" }
+    methods:  [POST, DELETE]

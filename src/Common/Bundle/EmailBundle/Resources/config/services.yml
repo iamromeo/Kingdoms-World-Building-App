@@ -1,0 +1,4 @@
+services:
+    mandrill_mailer:
+        class: Common\Bundle\EmailBundle\Mailer\MandrillMailer
+        arguments: ["@service_container", "%hip_mandrill.api_key%", "%hip_mandrill.default.sender%", "%hip_mandrill.default.sender_name%", "Default"]

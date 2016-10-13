@@ -1,0 +1,8 @@
+Common\Bundle\EntitiesBundle\Entity\Species:
+    type: entity
+    table: species
+    fields:
+        name:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

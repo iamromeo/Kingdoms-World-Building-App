@@ -1,0 +1,54 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+<div class="col-lg-12">
+    <div class="page-header">
+      <h1>Word list <a class="pull-right btn btn-lg btn-primary" href="{{ path('word_new') }}">Create a new entry</a></h1>
+    </div>  
+    <table class="records_list table table-striped">
+        <thead>
+            <tr>
+                <th class="col-lg-1 ">Id</th>
+                <th class="col-lg-4">Term</th>
+                <th class="col-lg-1">Gender</th>
+                <th class="col-lg-2">Races</th>
+                <th class="col-lg-2">Type</th>
+                <th class="col-lg-2">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('word_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td><strong>{{ entity.term }}</strong></td>
+                <td>{{ entity.gender }}</td>
+                <td>
+                    <ul class="list list-unstyled">
+                    {% for species in entity.species %}
+                        <li>{{ species.name }}</li>
+                    {% endfor %}
+                    </ul>
+                </td>
+                <td>
+                    <ul class="list list-unstyled">
+                    {% for type in entity.type %}
+                        <li>{{ type.name }}</li>
+                    {% endfor %}
+                    </ul>
+                </td>
+                <td>
+                <ul class="list-inline">
+                    <li>
+                        <a class="btn btn-info btn-sm" href="{{ path('word_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a class="btn btn-primary btn-sm" href="{{ path('word_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,7 @@
+map_test_generate:
+    path:     /test/generate
+    defaults: { _controller: CommonMapBundle:Default:testGenerate }
+
+map_test_view:
+    path:     /test/view
+    defaults: { _controller: CommonMapBundle:Default:testView }

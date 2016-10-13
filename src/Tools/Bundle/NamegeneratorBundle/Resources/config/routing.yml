@@ -1,0 +1,7 @@
+tools_namegenerator_word:
+    resource: "@ToolsNamegeneratorBundle/Resources/config/routing/word.yml"
+    prefix:   /word
+
+tools_namegenerator_homepage:
+    path:     /
+    defaults: { _controller: ToolsNamegeneratorBundle:Default:index }

@@ -1,0 +1,22 @@
+common_map:
+    resource: "@CommonMapBundle/Resources/config/routing.yml"
+    prefix:   /map
+
+common_email:
+    resource: "@CommonEmailBundle/Resources/config/routing.yml"
+    prefix:   /
+
+account_user:
+    resource: "@AccountUserBundle/Resources/config/routing.yml"
+    prefix:   /account
+
+portal_public:
+    resource: "@PortalPublicBundle/Resources/config/routing.yml"
+    prefix:   /
+
+tools_namegenerator:
+    resource: "@ToolsNamegeneratorBundle/Resources/config/routing.yml"
+    prefix:   /namegenerator
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

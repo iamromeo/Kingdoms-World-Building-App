@@ -1,0 +1,41 @@
+Tools\Bundle\NamegeneratorBundle\Entity\Word:
+    type: entity
+    table: words
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        term:
+            type: string
+            length: 255
+        description:
+            type: text
+            nullable: true
+        gender:
+            type: string
+            length: 1
+    manyToMany:
+        species:
+            targetEntity: Common\Bundle\EntitiesBundle\Entity\Species
+            joinTable:
+                name: word_species
+                joinColumns:
+                    word_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    species_id:
+                        referencedColumnName: id
+        type:
+            targetEntity: Wordtype
+            joinTable:
+                name: word_wordtypes
+                joinColumns:
+                    word_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    type_id:
+                        referencedColumnName: id
+    lifecycleCallbacks: {  }

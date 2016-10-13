@@ -1,0 +1,3 @@
+user_account:
+    path:     /
+    defaults: { _controller: AccountUserBundle:Default:index }

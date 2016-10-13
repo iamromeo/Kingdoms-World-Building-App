@@ -1,0 +1,4 @@
+services:
+#    tools_namegenerator.example:
+#        class: Tools\Bundle\NamegeneratorBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
