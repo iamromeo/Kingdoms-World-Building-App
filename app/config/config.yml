@@ -7,10 +7,10 @@ imports:
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: en
-    amazon_s3_bucket_name: lostkingdom-kingdoms
-    amazon_aws_key: AKIAIGKUUQL4V2GYGN6A
-    amazon_aws_secret_key: 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
-    amazon_s3_base_url: https://s3.amazonaws.com/lostkingdom-kingdoms/
+    amazon_s3_bucket_name: "%aws_bucket_name%"
+    amazon_aws_key: "%aws_key%"
+    amazon_aws_secret_key: "%aws_secret_key%"
+    amazon_s3_base_url: "%aws_s3_base_url%"
 
 framework:
     #esi:             ~
