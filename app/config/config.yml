@@ -58,7 +58,7 @@ assetic:
         less: ~
 
 braincrafted_bootstrap:
-    less_filter: less
+    css_preprocessor: less
     auto_configure:
         twig: false
         knp_menu: false
